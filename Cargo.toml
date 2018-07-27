@@ -3,4 +3,12 @@ name = "tet"
 version = "0.1.0"
 authors = ["Michael Zhang <failed.down@gmail.com>"]
 
+[[bin]]
+name = "tet"
+path = "bin/main.rs"
+
 [dependencies]
+clap = "2.32"
+config = "0.9"
+failure = "0.1.1"
+serenity = "0.5"
