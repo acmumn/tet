@@ -17,3 +17,11 @@ table! {
         task_id -> Integer,
     }
 }
+
+table! {
+    task_completions(id) {
+        id -> Integer,
+        user_id -> Integer,
+        task_id -> Integer,
+    }
+}
