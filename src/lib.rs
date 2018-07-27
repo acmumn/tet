@@ -1,3 +1,5 @@
+#[macro_use]
+extern crate diesel;
 extern crate failure;
 #[macro_use]
 extern crate serenity;
