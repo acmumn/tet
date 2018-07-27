@@ -1,11 +1,19 @@
 table! {
-	tasks(id) {
-		id -> Integer,
-	}
+    tasks(id) {
+        id -> Integer,
+    }
 }
 
 table! {
-	users(id) {
-		id -> Integer,
-	}
+    users(id) {
+        id -> Integer,
+    }
+}
+
+table! {
+    task_assignments(id) {
+        id -> Integer,
+        user_id -> Integer,
+        task_id -> Integer,
+    }
 }

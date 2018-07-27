@@ -1,12 +1,11 @@
 #[macro_use]
 extern crate diesel;
+extern crate config;
 extern crate failure;
-#[macro_use]
 extern crate serenity;
 
-#[doc(inline)]
 mod backend;
-#[doc(inline)]
 mod bot;
+mod controller;
 
-pub use bot::TetBot;
+pub use controller::Tet;

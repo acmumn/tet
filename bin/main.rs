@@ -2,8 +2,11 @@ extern crate config;
 extern crate failure;
 extern crate tet;
 
+use std::sync::Arc;
+use std::thread;
+
 use failure::Error;
-use tet::TetBot;
+use tet::Tet;
 
 fn main() -> Result<(), Error> {
     // read config from various sources
@@ -12,11 +15,10 @@ fn main() -> Result<(), Error> {
         .merge(config::File::with_name("tetcfg").required(false))?
         .merge(config::Environment::with_prefix("TET"))?;
 
-    println!("settings: {:?}", settings);
-    let bot_token = settings.get_str("bot_token")?;
-    let mut bot = TetBot::init(bot_token)?;
-    if let Err(why) = bot.client.start() {
-    	println!("Client error: {}", why);
-    }
-    Ok(())
+    let tet = Arc::new(Tet::new(settings)?);
+
+    let tet_sched = tet.clone();
+    thread::spawn(move || tet_sched.run_scheduler());
+
+    tet.run_bot()
 }
