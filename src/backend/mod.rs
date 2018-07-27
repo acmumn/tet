@@ -1,3 +1,4 @@
+mod db;
 mod models;
 mod schema;
 
@@ -7,7 +8,7 @@ use std::time::Duration;
 use schedule::Agenda;
 use failure::{err_msg, Error};
 
-use super::Tet;
+use Tet;
 
 impl Tet {
     pub fn run_scheduler(&self) -> Result<(), Error> {

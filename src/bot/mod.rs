@@ -2,9 +2,9 @@
 
 mod handler;
 
-use super::Tet;
 use failure::Error;
 
+use Tet;
 pub(crate) use self::handler::Handler;
 
 impl Tet {

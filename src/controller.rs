@@ -7,7 +7,7 @@ use std::sync::Mutex;
 use bot::Handler;
 
 pub struct Tet {
-    pub(crate)config: Config,
+    pub(crate) config: Config,
     pub(crate) db: Mutex<SqliteConnection>,
     pub(crate) bot: Mutex<Client>,
 }
