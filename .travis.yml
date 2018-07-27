@@ -5,7 +5,6 @@ rust:
   - nightly
 os:
   - linux
-  - osx
 env:
   - DATABASE_URL=tet.db
     RUST_BACKTRACE=1
